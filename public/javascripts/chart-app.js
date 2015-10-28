@@ -7,10 +7,53 @@ app.controller('MainController', ['$scope', '$http',  function($scope, $http) {
   var dataArray = formatDataForView(data);
 
   var table = google.visualization.arrayToDataTable(dataArray, false);
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
   
-  var options = {'title':'Company Sales'}
+  var options = {
+    title:'eSports Prize Pools',
+    subtitle: 'League of Legends World Championship vs Dota2 The International',
+    //chart: {title:'eSports Prize Pools',
+    //subtitle: 'League of Legends World Championship vs Dota2 The International '},
+    series:{
+      0:{color:'#000066'},
+      1:{color: '#990000'}
+    },
+
+    width: 900,
+    hAxis: {
+      title: 'Year',
+      titleTextStyle: {
+        
+        italic: false,
+        bold: true,
+      },
+      format: '',
+      gridlines: {count: 5},
+    },
+    
+    
+    
+    vAxis: {
+      title: 'Prize Pool',
+      titleTextStyle:{
+        bold: true,
+        italic: false,
+      },
+      textStyle: {
+        color: 'green'
+        
+      },
+     format: 'currency',
+      gridlines: {count: 11},
+      
+    }
+    
+      
+
+  };
   chart.draw(table, options);
+  
 
   });
 }]);
@@ -36,4 +79,5 @@ function formatDataForView(data) {
     });
   
     return dataArray;
+
 }

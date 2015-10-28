@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var GraphDataSchema = new mongoose.Schema({
   Year: String,
-  Sales: String,
-  Expenses: String
+  LoL: String,
+  Dota2: String
 }, 
 {
   collection: 'graph-data-collection'
