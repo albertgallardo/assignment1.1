@@ -11,8 +11,8 @@ app.controller('MainController', ['$scope', '$http',  function($scope, $http) {
 
   
   var options = {
-    title:'eSports Prize Pools',
-    subtitle: 'League of Legends World Championship vs Dota2 The International',
+    title:'eSports Prize Pools: League of Legends World Championship vs Dota2 The International ',
+    //subtitle: 'League of Legends World Championship vs Dota2 The International',
     //chart: {title:'eSports Prize Pools',
     //subtitle: 'League of Legends World Championship vs Dota2 The International '},
     series:{
